@@ -1,7 +1,7 @@
 public class main {
     public static void main(String[] args) {
-        Squarelotron square = new Squarelotron(5);
-        Squarelotron backup = new Squarelotron(5);
+        Squarelotron square = new Squarelotron(8);
+        Squarelotron backup = new Squarelotron(8);
         System.out.println("\nOriginal:");
         square.printSquarelotron();
         System.out.println("\nupsideDownFlip:");
@@ -9,7 +9,7 @@ public class main {
         square.printSquarelotron();
         square.squarelotron = backup.squarelotron;
         System.out.println("\nmainDiagonalFlip:");
-        square = square.mainDiagonalFlip(1);
+        square = square.mainDiagonalFlip(2);
         square.printSquarelotron();
         square.squarelotron = backup.squarelotron;
         System.out.println("\nrotateRight:");

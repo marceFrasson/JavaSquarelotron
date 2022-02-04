@@ -1,7 +1,9 @@
-import static org.junit.Assert.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SquarelotronTest {
 
@@ -30,13 +32,13 @@ public class SquarelotronTest {
     public void testUpsideDownFlip() {
         int[][] testArray3 = {{7, 8, 9}, {4, 5, 6}, {1, 2, 3}};
         Squarelotron square3 = new Squarelotron(3);
-        Squarelotron upsideDown3 = square3.upsideDownDownFlip(1);
+        Squarelotron upsideDown3 = square3.upsideDownFlip(1);
         assertTrue(Arrays.deepEquals(upsideDown3.squarelotron, testArray3));
 
         int[][] testArray4 = {{13, 14, 15, 16}, {9, 6, 7, 12},
                 {5, 10, 11, 8}, {1, 2, 3, 4}};
         Squarelotron square4 = new Squarelotron(4);
-        Squarelotron upsideDown4 = square4.upsideDownDownFlip(1);
+        Squarelotron upsideDown4 = square4.upsideDownFlip(1);
         assertTrue(Arrays.deepEquals(upsideDown4.squarelotron, testArray4));
 
         int[][] testArray8 = {{1, 2, 3, 4, 5, 6, 7, 8}, {9, 10, 11, 12, 13, 14, 15, 16},
@@ -44,29 +46,29 @@ public class SquarelotronTest {
                 {33, 34, 27, 36, 37, 30, 39, 40}, {41, 42, 19, 20, 21, 22, 47, 48},
                 {49, 50, 51, 52, 53, 54, 55, 56}, {57, 58, 59, 60, 61, 62, 63, 64}};
         Squarelotron square8 = new Squarelotron(8);
-        Squarelotron upsideDown8 = square8.upsideDownDownFlip(3);
+        Squarelotron upsideDown8 = square8.upsideDownFlip(3);
         assertTrue(Arrays.deepEquals(upsideDown8.squarelotron, testArray8));
     }
 
     @Test
     public void testMainDiagonalFlip() {
-        int[][] testArray3 = {{1, 4, 7}, {2, 5, 8}, {3, 6, 9}};
+        int[][] testArray3 = {{1, 2, 7}, {4, 5, 6}, {3, 8, 9}};
         Squarelotron square3 = new Squarelotron(3);
         Squarelotron diagonalFlip3 = square3.mainDiagonalFlip(1);
         assertTrue(Arrays.deepEquals(diagonalFlip3.squarelotron, testArray3));
 
-        int[][] testArray4 = {{1, 5, 9, 13}, {2, 6, 7, 14},
-                {3, 10, 11, 15}, {4, 8, 12, 16}};
+        int[][] testArray4 = {{1, 2, 3, 13}, {5, 6, 7, 8},
+                {9, 10, 11, 12}, {4, 14, 15, 16}};
         Squarelotron square4 = new Squarelotron(4);
         Squarelotron diagonalFlip4 = square4.mainDiagonalFlip(1);
         assertTrue(Arrays.deepEquals(diagonalFlip4.squarelotron, testArray4));
 
-        int[][] testArray8 = {{1, 2, 3, 4, 5, 6, 7, 8}, {9, 10, 11, 12, 13, 14, 15, 16},
-                {17, 18, 19, 27, 35, 43, 23, 24}, {25, 26, 20, 28, 29, 44, 31, 32},
-                {33, 34, 21, 36, 37, 45, 39, 40}, {41, 42, 22, 30, 38, 46, 47, 48},
-                {49, 50, 51, 52, 53, 54, 55, 56}, {57, 58, 59, 60, 61, 62, 63, 64}};
+        int[][] testArray8 = {{1, 2, 3, 4, 5, 6, 7, 57}, {9, 10, 11, 12, 13, 14, 15, 16},
+                {17, 18, 19, 20, 21, 22, 23, 24}, {25, 26, 27, 28, 29, 30, 31, 32},
+                {33, 34, 35, 36, 37, 38, 39, 40}, {41, 42, 43, 44, 45, 46, 47, 48},
+                {49, 50, 51, 52, 53, 54, 55, 56}, {8, 58, 59, 60, 61, 62, 63, 64}};
         Squarelotron square8 = new Squarelotron(8);
-        Squarelotron diagonalFlip8 = square8.mainDiagonalFlip(3);
+        Squarelotron diagonalFlip8 = square8.mainDiagonalFlip(1);
         assertTrue(Arrays.deepEquals(diagonalFlip8.squarelotron, testArray8));
     }
 

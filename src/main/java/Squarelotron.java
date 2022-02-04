@@ -52,7 +52,9 @@ public class Squarelotron {
         for(int i = 0; i < size; i++) {
             for(int j = 0; j < size; j++) {
                 if(isOnRing(i, j, ring)) {
-                    newMatrix.squarelotron[i][j] = squarelotron[j][i];
+                    if((i == ring - 1 && j == size - ring) || (i == size - ring && j == ring - 1)) {
+                        newMatrix.squarelotron[i][j] = squarelotron[j][i];
+                    }
                 }
             }
         }
